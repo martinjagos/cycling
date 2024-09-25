@@ -8,6 +8,7 @@
 <!--FontAwesome 6-->
 <link rel="stylesheet" type="text/css" href="<?=base_url("assets/fw/css/all.min.css");?>">
 
+<link rel="stylesheet" type="text/css" href="<?=base_url("/node_modules/flag-icons/css/flag-icons.min.css");?>">
 
 <!-- JQuery -->
 <script src="<?=base_url("node_modules/jquery/dist/jquery.min.js")?>"></script>
