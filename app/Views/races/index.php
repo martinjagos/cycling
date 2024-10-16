@@ -12,14 +12,13 @@ echo $this->section("content");
     <?php
 
     $iso = new IS();
-
     foreach($data as $country => $value) {
         $country_name = $country;
         if(!empty($country)) {
             $country_name = $iso->alpha2(strtoupper($country))['name'];
         } else $country_name = "Global";
 
-        echo anchor('/races/'.$country, '<span class="fi fi-'.$country.'"></span> '.$country_name. ' ('.$value.')', ['class' => 'text-center pt-3 text-decoration-none']);
+        echo anchor('/races/'.$country, '<span class="fi fi-'.$country.'"></span> '.$country_name. ' ('.$value.')', ['class' => 'text-center text-decoration-none']);
         echo '<br>';
     }
 

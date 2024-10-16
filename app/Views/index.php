@@ -6,9 +6,10 @@ echo $this->section("content");
 
 
 
-HELLo
 
 
 <?php
+
+echo anchor('/races', "Races");
 
 echo $this->endSection();

@@ -9,6 +9,7 @@
 <link rel="stylesheet" type="text/css" href="<?=base_url("assets/fw/css/all.min.css");?>">
 
 <link rel="stylesheet" type="text/css" href="<?=base_url("/node_modules/flag-icons/css/flag-icons.min.css");?>">
+<link rel="stylesheet" type="text/css" href="<?=base_url("assets/custom.css");?>">
 
 <!-- JQuery -->
 <script src="<?=base_url("node_modules/jquery/dist/jquery.min.js")?>"></script>

@@ -66,7 +66,7 @@ class Auth extends BaseController
             $this->ionAuth->login($username, $password);
             return redirect()->route('/');
         } else {
-            $this->session->setFlashdata('error', 'Něco se nepodařilo');
+            $this->session->setFlashdata('error', 'Something went wrong..');
             $this->session->setFlashData('type', 'error');
             return redirect()->route('register');
         }
@@ -74,7 +74,7 @@ class Auth extends BaseController
 
     public function registerUsername(): void {
         $username = $this->request->getPost("username");
-        $rules = ['username' => "is_unique[joohle_users.username]",];
+        $rules = ['username' => "is_unique[users.username]",];
         $data = array('username' => $username,);
         $this->validation->setRules($rules);
         $result = $this->validation->run($data);
@@ -84,7 +84,7 @@ class Auth extends BaseController
 
     public function registerEmail(): void {
         $email = $this->request->getPost("email");
-        $rules = ['email' => "is_unique[joohle_users.email]",];
+        $rules = ['email' => "is_unique[users.email]",];
         $data = array('email' => $email,
 
         );
