@@ -8,16 +8,19 @@ use CodeIgniter\HTTP\RedirectResponse;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
+use League\ISO3166\ISO3166 as IS;
 
 class RaceController extends BaseController
 {
     var $racesModel;
     var $raceTypeModel;
+    var $IS;
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         parent::initController($request, $response, $logger);
 
+        $this->IS = new IS();
         $this->racesModel = new RacesModel();
         $this->raceTypeModel = new RaceTypeModel();
     }
@@ -39,6 +42,9 @@ class RaceController extends BaseController
 
     public function showRaces($id): string|RedirectResponse
     {
-        return view('races/data', ['title' => 'Races | ' . $id, 'data' => $this->racesModel->where('country', $id)->paginate(20), 'pager' => $this->racesModel->pager]);
+
+        $fullName = $this->IS->alpha2(strtoupper($id))['name'];
+
+        return view('races/data', ['title' => 'Races | ' . $fullName, 'data' => $this->racesModel->where('country', $id)->paginate(20), 'name' => $fullName, 'pager' => $this->racesModel->pager]);
     }
 }
