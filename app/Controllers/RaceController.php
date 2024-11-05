@@ -56,7 +56,8 @@ class RaceController extends BaseController
     public function showRacesInformation($countryId, $year): string|RedirectResponse
     {
         $races_of_year = $this->raceYearModel->where('country', $countryId)->where('year', $year)
-            ->join('uci_tour_type', 'race_year.uci_tour = uci_tour_type.id')->findAll();
+            ->join('uci_tour_type', 'race_year.uci_tour = uci_tour_type.id')
+            ->select('race_year.*, uci_tour_type.id AS uci_id, uci_tour_type.name')->findAll();
 
         return view('races/countryRaces', ['title' => 'Races | ' . $this->IS->alpha2(strtoupper($countryId))['name'], 'data' => $races_of_year]);
     }

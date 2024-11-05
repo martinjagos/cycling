@@ -20,6 +20,13 @@ $routes->post('register-email', 'Auth::registerEmail');
 $routes->get('/races/(:any)', 'RaceController::showRaces/$1');
 $routes->get('/races-info/(:any)/(:num)', 'RaceController::showRacesInformation/$1/$2');
 
+$routes->get('/dashboard', 'Dashboard::index');
+
 $routes->get('/pdf/(:num)', 'PdfController::pdf/$1');
 $routes->get('/riders', 'RidersController::index');
 $routes->get('/secret', 'PdfController::secret');
+
+$routes->group('dashboard', ['filter' => 'dashboard'], function ($routes) {
+
+    $routes->delete('delete-race/(:num)', 'Dashboard::deleteRace/$1');//Deletes the user in the database.
+});
