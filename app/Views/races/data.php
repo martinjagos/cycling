@@ -1,5 +1,4 @@
 <?php
-use League\ISO3166\ISO3166 as IS;
 
 echo $this->extend("layout/master");
 echo $this->section("content");
@@ -11,18 +10,10 @@ echo $this->section("content");
         <h1>Races of <?= $name ?></h1>
         <?php
 
-        $iso = new IS();
-
         foreach($data as $race) {
-            echo '<p>'.$race->default_name.'</p>';
+            echo anchor('/races-info/'.$short.'/'.$race->year, '<p>' . $race->year . '</p>', ['class' => 'text-center text-decoration-none']);
         }
 
-        ?>
-
-
-        <?php
-
-        if($pager->getPageCount() > 1) echo $pager->links();
         ?>
 
     </div>
