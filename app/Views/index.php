@@ -18,6 +18,9 @@ echo '</div>';
 echo '<div class="px-5" style="max-width: 10rem">';
 echo anchor('/riders', "Riders", 'class="btn border border-1" style="max-width: 10rem"');
 echo '</div>';
+echo '<div class="px-5" style="max-width: 10rem">';
+echo anchor('/secret', "Editor", 'class="btn border border-1" style="max-width: 10rem"');
+echo '</div>';
 echo '</div>';
 ?>
 <div class="d-flex justify-content-center overflow-hidden my-5">
