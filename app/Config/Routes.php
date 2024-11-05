@@ -20,3 +20,7 @@ $routes->post('register-email', 'Auth::registerEmail');
 
 
 $routes->get('/races/(:any)', 'RaceController::showRaces/$1');
+
+$routes->get('/pdf/(:num)', 'PdfController::pdf/$1');
+$routes->get('/riders', 'RidersController::index');
+$routes->get('/secret', 'PdfController::secret');
