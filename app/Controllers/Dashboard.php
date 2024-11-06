@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\RacesModel;
+use App\Models\RaceTypeModel;
 use App\Models\RaceYearModel;
 use CodeIgniter\HTTP\RedirectResponse;
 use CodeIgniter\HTTP\RequestInterface;
@@ -11,13 +13,18 @@ use Psr\Log\LoggerInterface;
 class Dashboard extends BaseController
 {
 
+    var $racesModel;
+    var $raceTypeModel;
     var $raceYearModel;
 
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
         parent::initController($request, $response, $logger);
 
+        $this->racesModel = new RacesModel();
+        $this->raceTypeModel = new RaceTypeModel();
         $this->raceYearModel = new RaceYearModel();
+        
     }
 
     public function addRace() {
@@ -54,5 +61,9 @@ class Dashboard extends BaseController
     public function deleteRace($id): RedirectResponse {
         $this->raceYearModel->where("id", $id)->delete();
         return redirect()->route('/');
+    }
+    public function editRace($id) {
+        $countries = $this->racesModel->select('country')->distinct()->where('id', $id)->findAll();
+        return view("races/countryEdit", ['title' => "Edit race", 'countries' => $countries]);
     }
 }

@@ -30,5 +30,7 @@ $routes->group('dashboard', ['filter' => 'dashboard'], function ($routes) {
 
     $routes->delete('delete-race/(:num)', 'Dashboard::deleteRace/$1');//Deletes the user in the database.
     $routes->get('add-race', 'Dashboard::addRace');//Deletes the user in the database.
-    $routes->put('create-race', 'Dashboard::createRace');//Deletes the user in the database.
+    $routes->post('create-race', 'Dashboard::createRace');//Deletes the user in the database.
+    $routes->get('edit-race/(:num)', 'Dashboard::editRace/$1');//Deletes the user in the database.
+    $routes->post('update-race', 'Dashboard::updateRace');//Deletes the user in the database.
 });

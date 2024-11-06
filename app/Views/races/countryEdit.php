@@ -6,7 +6,7 @@ echo $this->section("content");
 
 ?>
 
-    <form action="<?php base_url("/dashboard/create-race/") ?>" method="post" enctype="multipart/form-data">
+    <form action="<?php base_url("/dashboard/update-race/") ?>" method="post" enctype="multipart/form-data">
 
         <?= csrf_field() ?>
 
