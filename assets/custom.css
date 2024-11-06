@@ -5,3 +5,17 @@
 .uppercase {
     text-transform: uppercase;
 }
+
+
+/* Style for the image */
+.hover-image {
+    width: 100px; /* Initial width of the image */
+    height: auto; /* Keeps aspect ratio */
+    transition: transform 0.3s ease; /* Smooth transition for the size change */
+}
+
+/* Hover effect */
+.hover-image:hover {
+    z-index: 1999;
+    transform: scale(1.03); /* Scales the image to 1.5x its size */
+}
