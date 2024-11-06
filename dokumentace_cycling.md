@@ -1,7 +1,7 @@
-# Dokumentace projektu webové aplikace "Joohle"
+# Dokumentace projektu webové aplikace "Cycling"
 
 ## Úvod
-"Joohle" je webová aplikace pro vytváření a vyplňování riderů postavená na frameworku CodeIgniter 4. Tato dokumentace popisuje rozdělení práce mezi členy týmu, použití externích nástrojů, popisy metod v kontrolerech, vlastní knihovny a konfigurační proměnné.
+"Cycling" je webová aplikace pro vytváření a vyplňování riderů postavená na frameworku CodeIgniter 4. Tato dokumentace popisuje rozdělení práce mezi členy týmu, použití externích nástrojů, popisy metod v kontrolerech, vlastní knihovny a konfigurační proměnné.
 
 ## Rozdělení práce
 
