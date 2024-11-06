@@ -14,10 +14,6 @@ $ionAuth = new IonAuth();
       <?php
 
         if($ionAuth->loggedIn()) {
-            if($ionAuth->isAdmin()) {
-                echo '<a class="nav-link" href="'.base_url("dashboard/").'">Dashboard</a>';
-            }
-
             echo '<a class="nav-link" href="'.base_url("logout").'">Logout</a>';
         } else {
             echo '<a class="nav-link" href="'.base_url("login").'">Login</a>';

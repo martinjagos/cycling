@@ -37,13 +37,16 @@ echo $this->section("content");
         $deleteBtn = "<button type=\"button\" class=\"btn btn-outline-danger ms-3\" data-bs-toggle=\"modal\" data-bs-target=\"#modal" . $value->country . "\">Delete</button>";
 
 
-        if($ionAuth->isAdmin()) $table->addRow($race->id, $race->real_name, $race->start_date, $race->end_date, $race->year, empty($race->sex) ? "--" : $race->sex, $race->name, $deleteBtn);
+        if($ionAuth->isAdmin()) $table->addRow($race->id, $race->real_name, $race->start_date, $race->end_date, $race->year, empty($race->sex) ? "--" : $race->sex, $race->name, $editBtn . $deleteBtn);
         else $table->addRow(empty($race->logo) ? '--' : $img, $race->real_name, $race->start_date, $race->end_date, $race->year, empty($race->sex) ? "--" : $race->sex, $race->name);
 
         echo form_modal("modal" . $value->country, $value->country, "Delete Race", "Do you really want to delete race \"" . $value->real_name . "\"?", "dashboard/delete-race/" . $value->id);
     }
 
     echo $table->generate();
+    echo '<div class="pt-5"></div>';
+    echo anchor('dashboard/add-race/', '+ RACE', 'class="btn btn-outline-primary"');
+    echo '<div class="pt-5"></div>';
     ?>
 
 </div>
