@@ -9,7 +9,7 @@
 - Návrh metod a kontrolérů
 - Vytvoření vzorových souborů
 - Přihlašovací systém
-- Správa kategorií
+- Správa závodů
 - Správa uživatelů
 
 ### Martin Jagoš
@@ -17,7 +17,7 @@
 - Riderovací záznamy databáze
 - Systém riderů
 - Zobrazování riderů
-- Správa riderů, otázek a odpovědí
+- Správa riderů
 
 ## Použité externí nástroje
 
@@ -101,20 +101,6 @@
   - Načte rider podle ID, pokusy uživatele o tento rider, obtížnost rideru a další informace.
   - Nastaví titulek stránky na základě názvu rideru.
 
-- `riderPassword()`
-  - Zkontroluje, zda zadané heslo odpovídá heslu rideru.
-  - Pokud je heslo správné, uloží do session pokus o rider a čas pokusu a přesměruje na stránku s pokusem.
-  - Pokud je heslo nesprávné, přesměruje zpět na stránku s detailem rideru.
-
-- `riderFree()`
-  - Uloží do session pokus o rider a čas pokusu.
-  - Přesměruje na stránku s pokusem.
-
-- `riderAttempt()`
-  - Zobrazí otázky rideru pro aktuální pokus.
-  - Načte rider a otázky (podle nastavení, zda mají být promíchány).
-  - Zkontroluje, zda uživatel začal pokus o tento rider, pokud ne, přesměruje zpět na stránku s detailem rideru.
-
 - `riderComplete()`
   - Uloží výsledky pokusu o rider.
   - Načte odpovědi uživatele, spočítá získané body a maximální možné body.
@@ -157,17 +143,7 @@
   - Vytvoří nový rider s údaji z formuláře.
   - Načte nové údaje z formuláře a vloží nový rider do databáze.
   - Přesměruje na seznam riderů v dashboardu.
-
-- `createQuestion()`
-  - Vytvoří novou otázku a odpověď pro konkrétní rider.
-  - Načte nové údaje z formuláře a vloží novou otázku a odpověď do databáze.
-  - Přesměruje na stránku pro editaci rideru.
-
-- `deleteQuestion()`
-  - Označí konkrétní otázku a její odpovědi jako smazané.
-  - Nastaví datum smazání u otázky a odpovědí a aktualizuje je v databázi.
-  - Přesměruje na stránku pro editaci rideru.
-
+ 
 - `deleteUser()`
   - Smaže konkrétního uživatele.
   - Smaže uživatele z databáze.
@@ -185,10 +161,6 @@
 - `updateGroups()`
   - Aktualizuje skupiny, do kterých uživatel patří.
   - Načte aktuální a nové skupiny uživatele a aktualizuje je v databázi.
-
-- `categories()`
-  - Zobrazí seznam všech kategorií.
-  - Načte všechny kategorie, které nejsou smazány, a zobrazí je na stránce dashboardu.
 
 - `editRace()`
   - Zobrazí formulář pro editaci konkrétní kategorie.
@@ -212,15 +184,6 @@
   - Označí konkrétní kategorii jako smazanou.
   - Nastaví datum smazání u kategorie a aktualizuje ji v databázi.
   - Přesměruje na seznam kategorií v dashboardu.
-
-- `attempts()`
-  - Zobrazí seznam všech pokusů.
-  - Načte všechny pokusy a zobrazí je na stránce dashboardu.
-
-- `deleteAttempt()`
-  - Označí konkrétní pokus jako smazaný.
-  - Nastaví datum smazání u pokusu a aktualizuje ho v databázi.
-  - Přesměruje na seznam pokusů v dashboardu.
 
 ## Závěr
 Tato dokumentace poskytuje přehled o struktuře a funkcionalitě aplikace "Joohle", rozdělení práce v týmu, použití externích nástrojů, popis metod a konfigurací. V případě jakýchkoli dotazů nebo problémů se obraťte na příslušného člena týmu dle rozdělení práce.
