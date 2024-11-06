@@ -29,4 +29,6 @@ $routes->get('/secret', 'PdfController::secret');
 $routes->group('dashboard', ['filter' => 'dashboard'], function ($routes) {
 
     $routes->delete('delete-race/(:num)', 'Dashboard::deleteRace/$1');//Deletes the user in the database.
+    $routes->get('add-race', 'Dashboard::addRace');//Deletes the user in the database.
+    $routes->put('create-race', 'Dashboard::createRace');//Deletes the user in the database.
 });
